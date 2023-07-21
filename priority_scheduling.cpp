@@ -56,7 +56,6 @@ vector<Job> removeCompletedJobs(vector<Job> jobs)
 }
 
 // finds the best job to perform at any given time
-// returns a pointer to the job
 // returns a job with id of -1 if none found
 Job findJob(vector<Job> jobs, int current_time)
 {
@@ -147,8 +146,10 @@ int main(int argc, char const *argv[])
     {
         Job current_job = findJob(jobs, current_time);
         
-        if (current_job.id == -1)
+        if (current_job.id == -1) {
+            current_time++;
             continue; // no valid job found
+        }
 
         else
         {
