@@ -103,7 +103,7 @@ int main()
                     segments[j].process_id = processes[i].id;
                     total_memory_available -= processes[i].size;
                     current_process_allocated = true;
-                    if (diff == 0)
+                    if (diff != 0)
                     {
                         cout << "Internal Fragmentation : Segment " << j + 1 << endl;
                     }

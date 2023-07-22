@@ -129,7 +129,7 @@ int main()
         { // The process cannot be allocated memory
             if (processes[i].size <= total_memory_available)
             {
-                cout << "External Fragementation : Process " << processes[i].id << " could not be allocated memory";
+                cout << "External Fragementation : Process " << processes[i].id << " could not be allocated memory"<<endl;
             }
             else
             {

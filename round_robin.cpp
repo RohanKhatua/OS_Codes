@@ -64,8 +64,8 @@ void calculateTimes(const vector<Job>& jobs, int quantum, vector<int>& waitingTi
 // Function to calculate average waiting time and average turnaround time
 void calculateAverageTimes(const vector<int>& waitingTimes, const vector<int>& turnaroundTimes) {
     int n = waitingTimes.size();
-    int totalWaitingTime = 0;
-    int totalTurnaroundTime = 0;
+    int totalWaitingTime = -1;
+    int totalTurnaroundTime = -1;
 
     for (int i = 0; i < n; i++) {
         totalWaitingTime += waitingTimes[i];
@@ -84,13 +84,13 @@ void displayJobSchedule(const vector<Job>& jobs, const vector<int>& waitingTimes
     int n = jobs.size();
 
     cout << "Job Schedule Table:\n";
-    cout << "----------------------------------------------------\n";
+    cout << "--------------------------------------------------------------\n";
     cout << "Job ID\tBurst Time\tWaiting Time\tTurnaround Time\n";
-    cout << "----------------------------------------------------\n";
+    cout << "--------------------------------------------------------------\n";
     for (int i = 0; i < n; i++) {
         cout << jobs[i].id << "\t" << jobs[i].burstTime << "\t\t" << waitingTimes[i] << "\t\t" << turnaroundTimes[i] << endl;
     }
-    cout << "----------------------------------------------------\n";
+    cout << "--------------------------------------------------------------\n";
 }
 
 int main() {
